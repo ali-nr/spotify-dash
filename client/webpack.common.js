@@ -5,19 +5,16 @@ const {CheckerPlugin} = require('awesome-typescript-loader');
 
 module.exports = {
   entry: {
-    app: './src/index.ts',
+    app: './src/index.tsx',
   },
   plugins: [
     new CheckerPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Spotify Dash',
+      template: './index.html',
+      filename: './index.html',
     }),
   ],
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   module: {
     rules: [
       {
